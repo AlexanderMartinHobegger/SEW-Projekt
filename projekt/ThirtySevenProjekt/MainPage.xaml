@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ThirtySevenProjekt.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout 
+            Padding="30,0"
+            Spacing="25">
+
+
+            <Label
+                Text="Mathe Trainer"
+                Style="{StaticResource Headline}"
+                Margin="0, 20, 0, 0"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <HorizontalStackLayout Margin="0, -20, 0, 0">
+
+
+                <VerticalStackLayout Spacing="20" VerticalOptions="Center" HeightRequest="500" WidthRequest="400">
+
+                    <Label Text="Schwierigkeit auswählen:"
+                       FontSize="Medium"></Label>
+
+                    <RadioButton x:Name="leicht" 
+                                 Content="Leicht" 
+                                 GroupName="schwierigkeit" 
+                                 CheckedChanged="schwierigkeit_CheckedChanged"></RadioButton>
+
+                    <RadioButton x:Name="mittel"
+                                 Content="Mittel" 
+                                 GroupName="schwierigkeit"
+                                 CheckedChanged="schwierigkeit_CheckedChanged"></RadioButton>
+
+                    <RadioButton x:Name="schwer" 
+                                 Content="Schwer" 
+                                 GroupName="schwierigkeit"
+                                 CheckedChanged="schwierigkeit_CheckedChanged"></RadioButton>
+                    <RadioButton x:Name="zahler" Content="Prof. Zahler" GroupName="schwierigkeit"></RadioButton>
+
+
+                </VerticalStackLayout>
+
+
+
+                <VerticalStackLayout VerticalOptions="Center" Spacing="10" IsVisible="false" HorizontalOptions="Center" x:Name="rechnung" WidthRequest="500">
+                    
+                    <Border Stroke="Green" x:Name="bRight" IsVisible="False">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="10" />
+                        </Border.StrokeShape>
+
+                        <Label x:Name="lRight"
+                               
+                               IsVisible="False"
+                               Text="Richtig"
+                               FontSize="Large"
+                               HorizontalOptions="Center"
+                               TextColor="Green"></Label>
+
+                    </Border>
+                    <Border Stroke="Red" x:Name="bWrong" IsVisible="False">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="10" />
+                        </Border.StrokeShape>
+                        <Label x:Name="lWrong"
+       
+                                IsVisible="False"
+                                Text="Richtig"
+                                FontSize="Large"
+                                HorizontalOptions="Center"
+                                TextColor="Red"></Label>
+                    </Border>
+
+
+                    <Border Stroke="Black" >
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="10" />
+                        </Border.StrokeShape>
+
+                        <Label x:Name="lRechnung" 
+                            Text="" 
+                           FontSize="Large" 
+                           HorizontalOptions="Center" 
+                           ></Label>
+                    </Border>
+
+                    <Entry Placeholder="Antwort:" WidthRequest="500"  x:Name="eRechnung" Completed="eRechnung_Completed"
+                           Keyboard="Numeric"></Entry>
+                    <Button x:Name="bNächsteAufgabe"
+                            WidthRequest="500"
+                        Clicked="bBereit_Clicked"
+                        IsVisible="False"                     
+                        Text="Nächste Aufgabe?" 
+                        
+                        FontSize="Large" ></Button>
+
+
+                </VerticalStackLayout>
+
+
+                <Button x:Name="bBereit"
+                        Clicked="bBereit_Clicked"
+                        IsVisible="True"
+                        BackgroundColor="Green" 
+                        Text="Bereit?" 
+                        WidthRequest="400"
+                        FontSize="Large" 
+                        FontFamily="Segoe UI" 
+                        Margin="20, 0, 0, 0"
+                        HeightRequest="150" ></Button>
+
+            </HorizontalStackLayout>
+
+
+
+
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
