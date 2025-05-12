@@ -8,7 +8,7 @@ namespace ThirtySevenProjekt {
         int rechnungEveryone;
         int numberRichtig = 0;
         int numberRichtigRow = 0;
-        int calculationsDone = 0;
+        int calculationsDone = 1;
         public MainPage() {
             InitializeComponent();
         }
@@ -175,7 +175,7 @@ namespace ThirtySevenProjekt {
             rechnung.IsVisible = false;
             bBereit.IsVisible = true;
         }
-
         
+
     }
 }

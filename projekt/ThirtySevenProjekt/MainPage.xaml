@@ -1,51 +1,67 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ThirtySevenProjekt.MainPage">
+             x:Class="ThirtySevenProjekt.MainPage"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             >
 
-    <ScrollView>
+    <ScrollView VerticalOptions="Center">
+
         <VerticalStackLayout 
             Padding="30,0"
             Spacing="25">
 
-
             <Label
                 Text="Mathe Trainer"
                 Style="{StaticResource Headline}"
-                Margin="0, 20, 0, 0"
+                
                 SemanticProperties.HeadingLevel="Level1" />
 
-            <HorizontalStackLayout Margin="0, -20, 0, 0">
+            
+            <HorizontalStackLayout  >
 
-
-                <VerticalStackLayout Spacing="20" VerticalOptions="Center" HeightRequest="500" WidthRequest="400">
+                <VerticalStackLayout Spacing="20"  HeightRequest="500" WidthRequest="400">
 
                     <Label Text="Schwierigkeit auswählen:"
-                       FontSize="Medium"></Label>
+                        VerticalOptions="Center"
+                        FontSize="Medium"></Label>
 
                     <RadioButton x:Name="leicht" 
-                                 Content="Leicht" 
-                                 GroupName="schwierigkeit" 
-                                 CheckedChanged="schwierigkeit_CheckedChanged"></RadioButton>
+                        Content="Leicht" 
+                        GroupName="schwierigkeit" 
+                        CheckedChanged="schwierigkeit_CheckedChanged"></RadioButton>
 
                     <RadioButton x:Name="mittel"
-                                 Content="Mittel" 
-                                 GroupName="schwierigkeit"
-                                 CheckedChanged="schwierigkeit_CheckedChanged"></RadioButton>
+                            Content="Mittel" 
+                            GroupName="schwierigkeit"
+                            CheckedChanged="schwierigkeit_CheckedChanged"></RadioButton>
 
                     <RadioButton x:Name="schwer" 
-                                 Content="Schwer" 
-                                 GroupName="schwierigkeit"
-                                 CheckedChanged="schwierigkeit_CheckedChanged"></RadioButton>
+                        Content="Schwer" 
+                        GroupName="schwierigkeit"
+                        CheckedChanged="schwierigkeit_CheckedChanged"></RadioButton>
                     <RadioButton x:Name="zahler" Content="Prof. Zahler" GroupName="schwierigkeit"></RadioButton>
 
 
                 </VerticalStackLayout>
 
-
-
-                <VerticalStackLayout VerticalOptions="Center" Spacing="10" IsVisible="false" HorizontalOptions="Center" x:Name="rechnung" WidthRequest="500">
+                <VerticalStackLayout  VerticalOptions="Center">
+                    <Button x:Name="bBereit"
+                            
+                    Clicked="bBereit_Clicked"
+                    IsVisible="True"
+                    BackgroundColor="Green" 
+                    Text="Bereit?" 
+                    WidthRequest="400"
+                    FontSize="Large" 
+                    FontFamily="Segoe UI" 
                     
+                    HeightRequest="150" ></Button>
+                </VerticalStackLayout>
+
+
+                <VerticalStackLayout Spacing="10" IsVisible="false"  x:Name="rechnung" WidthRequest="500">
+
                     <Border Stroke="Green" x:Name="bRight" IsVisible="False">
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="10" />
@@ -87,7 +103,18 @@
                     </Border>
 
                     <Entry Placeholder="Antwort:" WidthRequest="500"  x:Name="eRechnung" Completed="eRechnung_Completed"
-                           Keyboard="Numeric"></Entry>
+                           Keyboard="Numeric" >
+                        <Entry.Behaviors>
+                            <toolkit:NumericValidationBehavior 
+                                InvalidStyle="{StaticResource InvalidEntryStyle}"
+                                ValidStyle="{StaticResource ValidEntryStyle}"
+                                Flags="ValidateOnValueChanged"
+                                MinimumValue="1.0"
+                                MaximumValue="100.0"
+                                MaximumDecimalPlaces="2" />
+                        </Entry.Behaviors>
+                    </Entry>
+
                     <Button x:Name="bNächsteAufgabe"
                             WidthRequest="500"
                         Clicked="bBereit_Clicked"
@@ -100,19 +127,10 @@
                 </VerticalStackLayout>
 
 
-                <Button x:Name="bBereit"
-                        Clicked="bBereit_Clicked"
-                        IsVisible="True"
-                        BackgroundColor="Green" 
-                        Text="Bereit?" 
-                        WidthRequest="400"
-                        FontSize="Large" 
-                        FontFamily="Segoe UI" 
-                        Margin="20, 0, 0, 0"
-                        HeightRequest="150" ></Button>
+
 
             </HorizontalStackLayout>
-
+            
 
 
 
