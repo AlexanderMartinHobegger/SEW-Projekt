@@ -111,9 +111,9 @@
 
                         <Button x:Name="bNächsteAufgabe"
                          WidthRequest="500"
-                     Clicked="bBereit_Clicked"
-                     IsVisible="False"                     
-                     Text="Nächste Aufgabe?" 
+                        Clicked="bBereit_Clicked"
+                        IsVisible="False"                     
+                        Text="Nächste Aufgabe?" 
                      
                      FontSize="Large" ></Button>
 

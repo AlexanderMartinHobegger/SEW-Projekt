@@ -6,8 +6,29 @@
 
     <StackLayout VerticalOptions="Center" Padding="20" Spacing="10">
 
+
+        <FlexLayout JustifyContent="Center" >
+
+            <Label Text="Deine Spiel Statistik"
+                FontSize="50"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                TextColor="#333333"></Label>
+
+
+
+        </FlexLayout>
+        
         <FlexLayout JustifyContent="SpaceAround" Direction="Row">
 
+
+            <Border 
+                Stroke="LightGray"
+                StrokeThickness="2"
+                Padding="15"
+                Margin="10"
+                StrokeShape="RoundRectangle 10"
+                HeightRequest="250">
             <StackLayout Spacing="10">
                 <Label HorizontalOptions="Center" FontSize="Large" Text="Leicht"></Label>
                 <Label x:Name="lLeichtHowManyDone" FontSize="Medium"></Label>
@@ -15,22 +36,55 @@
                 <Label x:Name="lLeichtNumberFalse" FontSize="Medium"></Label>
                 <Label x:Name="lLeichtQuote" FontSize="Medium"></Label>
             </StackLayout>
+            </Border>
 
-            <StackLayout Spacing="10">
-                <Label HorizontalOptions="Center" FontSize="Large" Text="Mittel"></Label>
-                <Label x:Name="lMediumHowManyDone" FontSize="Medium"></Label>
-                <Label x:Name="lMediumNumberTrue" FontSize="Medium"></Label>
-                <Label x:Name="lMediumNumberFalse" FontSize="Medium"></Label>
-                <Label x:Name="lMediumQuote" FontSize="Medium"></Label>
-            </StackLayout>
+            <Border 
+                Stroke="LightGray"
+                StrokeThickness="2"
+                Padding="15"
+                Margin="10"
+                StrokeShape="RoundRectangle 10"
+                HeightRequest="250">
+                <StackLayout Spacing="10">
+                    <Label HorizontalOptions="Center" FontSize="Large" Text="Mittel"></Label>
+                    <Label x:Name="lMediumHowManyDone" FontSize="Medium"></Label>
+                    <Label x:Name="lMediumNumberTrue" FontSize="Medium"></Label>
+                    <Label x:Name="lMediumNumberFalse" FontSize="Medium"></Label>
+                    <Label x:Name="lMediumQuote" FontSize="Medium"></Label>
+                </StackLayout>
+            </Border>
 
-            <StackLayout Spacing="10">
-                <Label HorizontalOptions="Center" FontSize="Large" Text="Schwer"></Label>
-                <Label x:Name="lHardHowManyDone" FontSize="Medium"></Label>
-                <Label x:Name="lHardNumberTrue" FontSize="Medium"></Label>
-                <Label x:Name="lHardNumberFalse" FontSize="Medium"></Label>
-                <Label x:Name="lHardQuote" FontSize="Medium"></Label>
-            </StackLayout>
+
+            <Border 
+                Stroke="LightGray"
+                StrokeThickness="2"
+                Padding="15"
+                 Margin="10"
+                 StrokeShape="RoundRectangle 10"
+                 HeightRequest="250">
+                <StackLayout Spacing="10">
+                    <Label HorizontalOptions="Center" FontSize="Large" Text="Schwer"></Label>
+                    <Label x:Name="lHardHowManyDone" FontSize="Medium"></Label>
+                    <Label x:Name="lHardNumberTrue" FontSize="Medium"></Label>
+                    <Label x:Name="lHardNumberFalse" FontSize="Medium"></Label>
+                    <Label x:Name="lHardQuote" FontSize="Medium"></Label>
+                </StackLayout>
+            </Border>
+        </FlexLayout>
+            
+
+        <FlexLayout JustifyContent="Center" Margin="0, 50, 0, 0" >
+            <Button x:Name="zurücksetzen"
+        
+                Clicked="zurücksetzen_Clicked"
+                IsVisible="True"
+                BackgroundColor="Green" 
+                Text="Statistiken zurücksetzen" 
+                WidthRequest="400"
+                FontSize="Large" 
+                FontFamily="Segoe UI" 
+
+                HeightRequest="150" ></Button>
         </FlexLayout>
 
 

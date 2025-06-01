@@ -32,14 +32,14 @@ public partial class Statistik : ContentPage
             leicht.calculationsDone = 1;
         lLeichtQuote.Text ="Erfolgsquote: " +((leicht.numberTrue * 100) / leicht.calculationsDone).ToString() + "%";
 
-        lMediumHowManyDone.Text = "Aufgaben Gelöst: " + mittel.numberTrue.ToString();
+        lMediumHowManyDone.Text = "Aufgabenanzahl Insgesamt: " + mittel.numberTrue.ToString();
         lMediumNumberTrue.Text = "Aufgaben Richtig Beantwortet: " + mittel.numberTrue.ToString();
         lMediumNumberFalse.Text = "Aufgaben Falsch Beantwortet: " + mittel.numberFalse.ToString();
         if (mittel.calculationsDone == 0)
             mittel.calculationsDone = 1;
         lMediumQuote.Text = "Erfolgsquote: " + ((mittel.numberTrue * 100) / mittel.calculationsDone).ToString() + "%";
 
-        lHardHowManyDone.Text = "Aufgaben Gelöst: " + schwer.calculationsDone.ToString();
+        lHardHowManyDone.Text = "Aufgabenanzahl Insgesamt: " + schwer.calculationsDone.ToString();
         lHardNumberTrue.Text = "Aufgaben Richtig Beantwortet: " + schwer.numberTrue.ToString();
         lHardNumberFalse.Text = "Aufgaben Richtig Beantwortet: " + schwer.numberFalse.ToString();
         if (schwer.calculationsDone == 0)
@@ -47,5 +47,15 @@ public partial class Statistik : ContentPage
         lHardQuote.Text = "Erfolgsquote: " +((schwer.numberTrue * 100) / schwer.calculationsDone).ToString() +"%";
 
 
+    }
+
+
+    private void zurücksetzen_Clicked(object sender, EventArgs e)
+    {
+       
+        MainPage.statistic1["Leicht"] = (0, 0, 0);
+        MainPage.statistic1["Mittel"] = (0, 0, 0);
+        MainPage.statistic1["Schwer"] = (0, 0, 0);
+        UpdateStatistik(MainPage.statistic1);
     }
 }
