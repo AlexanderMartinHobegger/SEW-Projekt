@@ -34,8 +34,8 @@
                 <Label x:Name="lLeichtHowManyDone" FontSize="Medium"></Label>
                 <Label x:Name="lLeichtNumberTrue" FontSize="Medium"></Label>
                 <Label x:Name="lLeichtNumberFalse" FontSize="Medium"></Label>
-                <Label x:Name="lLeichtQuote" FontSize="Medium"></Label>
-            </StackLayout>
+                    <Label x:Name="lLeichtQuote" FontSize="Medium"></Label>
+                </StackLayout>
             </Border>
 
             <Border 

@@ -13,17 +13,23 @@
          Spacing="25">
 
 
-
+            <FlexLayout JustifyContent="Center">
+                <Label Text="Mathe Trainer" FontSize="50"></Label>
+            </FlexLayout>
 
 
 
             <FlexLayout JustifyContent="SpaceBetween" >
 
-                <StackLayout Spacing="20"  HeightRequest="500" WidthRequest="400">
+               
 
-                    <Label></Label>
-                    
-                    <Label Text="Schwierigkeit auswählen:"
+                    <StackLayout Spacing="20"  HeightRequest="500" WidthRequest="400">
+
+                   
+
+                   
+
+                        <Label Text="Schwierigkeit auswählen:"
                      VerticalOptions="Center"
                      FontSize="Medium"></Label>
 
@@ -42,9 +48,10 @@
                      GroupName="schwierigkeit"
                      CheckedChanged="schwierigkeit_CheckedChanged"></RadioButton>
                    
-
+                    
 
                 </StackLayout>
+                
 
 
                 <VerticalStackLayout  VerticalOptions="Center">

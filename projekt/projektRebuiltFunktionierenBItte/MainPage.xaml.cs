@@ -345,15 +345,7 @@ namespace projektRebuiltFunktionierenBItte
             return true;
         }
 
-        private void Reset()
-        {
-            bRight.IsVisible = false;
-            lRight.IsVisible = false;
-            bWrong.IsVisible = false;
-            bWrong.IsVisible = false;
-            rechnung.IsVisible = false;
-            bBereit.IsVisible = true;
-        }
+       
 
 
     }
